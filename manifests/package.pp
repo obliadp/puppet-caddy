@@ -9,7 +9,7 @@ class caddy::package inherits caddy {
     path    => '/usr/bin:/usr/sbin:/bin:/usr/local/bin',
   }
 
-  $caddy_url    ="${caddy_install_url}/${$caddy::params::arch}?plugins=${caddy::caddy_features}&license=personal"
+  $caddy_url    ="${caddy_install_url}/${$caddy::params::arch}?license=personal&plugins=${caddy::caddy_features}"
   $caddy_dl_dir ="-o ${caddy::params::caddy_tmp_dir}/caddy_linux_${$caddy::params::arch}_custom.tar.gz"
 
   exec { 'install caddy':
